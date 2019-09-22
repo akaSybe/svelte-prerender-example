@@ -1,6 +1,6 @@
 import svelte from "rollup-plugin-svelte";
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
+import resolve from "rollup-plugin-node-resolve";
+import commonjs from "rollup-plugin-commonjs";
 import execute from "rollup-plugin-execute";
 import html from "rollup-plugin-bundle-html";
 
@@ -17,14 +17,15 @@ export default [
     },
     plugins: [
       svelte({
-				dev: !production,
-				hydratable: true,
-			}),
-			resolve({
-				browser: true,
-				dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
-			}),
-			commonjs(),
+        dev: !production,
+        hydratable: true
+      }),
+      resolve({
+        browser: true,
+        dedupe: importee =>
+          importee === "svelte" || importee.startsWith("svelte/")
+      }),
+      commonjs(),
       html({
         template: "src/template.html",
         dest: "public",
@@ -44,12 +45,13 @@ export default [
         // enable run-time checks when not in production
         dev: !production,
         generate: "ssr"
-			}),
-			resolve({
-				browser: true,
-				dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
-			}),
-			commonjs(),
+      }),
+      resolve({
+        browser: true,
+        dedupe: importee =>
+          importee === "svelte" || importee.startsWith("svelte/")
+      }),
+      commonjs(),
       execute("node src/prerender.js")
     ]
   }

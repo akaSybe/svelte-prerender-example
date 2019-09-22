@@ -1,15 +1,15 @@
-import App from './App.svelte';
+import App from "./App.svelte";
 
 const target = document.getElementById("app");
 
-target.innerHTML = '';
+target.innerHTML = "";
 
 const app = new App({
-	target,
-	props: {
-		name: 'world'
-	},
-	hydrate: true,
+  target,
+  props: {
+    name: "world"
+  },
+  hydrate: true
 });
 
 export default app;
