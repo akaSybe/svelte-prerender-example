@@ -1,5 +1,7 @@
 # Prerender Svelte app at build-time
 
+> :warning: I'd recommend you to use [rollup-plugin-svelte-ssr](https://github.com/akaSybe/rollup-plugin-svelte-ssr) instead. It uses the same approach but it's easier to use.
+
 This is an example how to prerender Svelte app
 
 ## Get started
